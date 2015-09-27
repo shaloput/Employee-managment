@@ -17,6 +17,8 @@
 	}
 
 	$pagenum = 1;
+
+	
 	mysqli_close($mysqli);
  ?>
 
@@ -35,7 +37,7 @@
 <body>
 	<div class="header">
 		<div class="container">
-			<h1>Наши сотрудники</h1>
+			<h1>Менеджер персонала</h1>
 		</div>			
 	</div>
 	<div class="container">

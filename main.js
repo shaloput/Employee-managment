@@ -7,18 +7,14 @@ function request_page(pn){
 	
 	var hr = new XMLHttpRequest();
     hr.open("POST", "pagination_parser.php", true);
-    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    hr.setRequestHeader("Content-type", "application/json");
     hr.onreadystatechange = function() {
 	    if(hr.readyState == 4 && hr.status == 200) {
-			var dataArray = hr.responseText.split("||");
-			var html_output = "";
-		    for(i = 0; i < dataArray.length - 1; i++){
-				var itemArray = dataArray[i].split("|");
-				html_output += "<p>ФИО: <b>"+itemArray[1]+"</b><hr><p>";
-			}
-
-			results_box.innerHTML = html_output;
-			//results_box.innerHTML = hr.responseText;
+			
+			var data = JSON.parse(hr.responseText);
+			alert(data);
+			var json = eval(<?php echo)
+			results_box.innerHTML = data['object']['id'];
 	    }
     }
     
