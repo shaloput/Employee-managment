@@ -8,22 +8,18 @@
 		$password = md5($_POST['password']);
 		
 
-		$sql = "SELECT * FROM users WHERE username=$username AND password=$password";
+		$sql = "SELECT * FROM users WHERE username='$username' AND password='$password' ";
 		//echo $sql;
 		$res = mysqli_query($mysqli, $sql);
-
-		if (mysqli_num_rows($res) == 1) {
+		
+		if (mysqli_num_rows($res)) {
 			$_SESSION['logged'] = true;
-			$_SESSION['username'] = $username;			
-			header("Location: ../index.php");
+			$_SESSION['username'] = $username;		
+			echo "Вы вошли как ".$_SESSION['username']."&nbsp &nbsp<a href=\"#\" onclick=\"javascript:logout();\">Выйти</a>";
 		} else {
-			//$_SESSION['logged'] = false;
+			$_SESSION['logged'] = false;
 		}
 
-		//$row = mysqli_fetch_array($res);
-		//$out = print_r($row);
-		//	echo "row";
-
 	mysqli_close($mysqli);
-}
+	}
  ?>

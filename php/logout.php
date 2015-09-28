@@ -1,5 +1,13 @@
 <?php 
 	session_start();
 	session_destroy();
-	header("Location: ../index.php");
+
+	echo "
+		Логин:
+		<input id=\"username\" type=\"text\">
+
+		Пароль:
+		<input id=\"password\" type=\"password\">
+			
+		<button onclick=\"javascript:login();\">Войти</button>";
 ?>

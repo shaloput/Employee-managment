@@ -13,9 +13,9 @@ session_start();
 	<div class="header">
 		<div class="container">
 			<h1>Менеджер персонала</h1>
-			<div class="login-block">
+			<div id="login-block">
 				<?php 
-				if (!isset($_SESSION['logged']) or $_SESSION['logged'] = false){
+				if (!isset($_SESSION['logged']) or $_SESSION['logged'] == false){
 					echo "
 					Логин:
 					<input id=\"username\" type=\"text\">
@@ -25,7 +25,7 @@ session_start();
 					
 					<button onclick=\"javascript:login();\">Войти</button>";
 				} else {
-					echo "Вы вошли как ".$_SESSION['username']."<a href=\"!#\" onclick=\"javascript:logut();\">Выйти</a>";
+					echo "Вы вошли как ".$_SESSION['username']."&nbsp &nbsp<a href=\"#\" onclick=\"javascript:logout();\">Выйти</a>";
 				}
 						
 				 ?>

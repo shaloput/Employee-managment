@@ -70,8 +70,10 @@ function setCurrentMoth() {
 
 function login() {
 	
-	username = document.getElementById("username").value;
-	password = document.getElementById("password").value;
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
+
+	var login_block	= document.getElementById("login-block");
 
 	var hr = new XMLHttpRequest();
 	hr.open("POST", "php/login.php", true);
@@ -79,13 +81,36 @@ function login() {
 
 	hr.onreadystatechange = function() {
 	    if(hr.readyState == 4 && hr.status == 200) {
-	    	alert(hr.responseText);
+	    	//alert(hr.responseText);
+	    	if (hr.responseText !== "") {
+		    	login_block.innerHTML = hr.responseText;
+			}
 	    }
 	}
 	
 	var login_vars = "username="+username+"&password="+password;
-	alert (login_vars);
+	//alert (login_vars);
 	hr.send(login_vars);
+}
+
+
+function logout() {
+	var hr = new XMLHttpRequest();
+	hr.open("POST", "php/logout.php", true);
+	hr.setRequestHeader ("Content-type", "application/x-www-form-urlencoded");
+	var login_block	= document.getElementById("login-block");
+
+
+	hr.onreadystatechange = function() {
+	    if(hr.readyState == 4 && hr.status == 200) {
+	    	//alert(hr.responseText);
+	    	if (hr.responseText !== "") {
+		    	login_block.innerHTML = hr.responseText;
+			}
+	    }
+	}
+
+	hr.send();
 }
 
 setCurrentMoth();

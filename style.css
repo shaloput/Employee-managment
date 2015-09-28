@@ -21,7 +21,7 @@ h1 {
 	display: inline-block;
 }
 
-.login-block {
+#login-block {
 	display: inline-block;
 	margin-left: 70px;
 }
