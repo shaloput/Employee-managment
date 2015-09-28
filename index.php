@@ -14,14 +14,21 @@ session_start();
 		<div class="container">
 			<h1>Менеджер персонала</h1>
 			<div class="login-block">
-				
+				<?php 
+				if (!isset($_SESSION['logged']) or $_SESSION['logged'] = false){
+					echo "
 					Логин:
-					<input id="username" type="text">
+					<input id=\"username\" type=\"text\">
 					
 					Пароль:
-					<input id="password" type="password">
+					<input id=\"password\" type=\"password\">
 					
-					<button id="login" onclick="javascript:login.php">Войти</button>		
+					<button onclick=\"javascript:login();\">Войти</button>";
+				} else {
+					echo "Вы вошли как ".$_SESSION['username']."<a href=\"!#\" onclick=\"javascript:logut();\">Выйти</a>";
+				}
+						
+				 ?>
 											
 			</div>
 		</div>			

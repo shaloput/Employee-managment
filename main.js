@@ -4,6 +4,7 @@ function request_page(pn){
 	if (pn == undefined) {
 		pn = 1;
 	}
+
 	var result_box = document.getElementById("result_box");
 	var pagination_controls = document.getElementById("pagination_controls");
 	var month = document.getElementById("month_box").selectedIndex;
@@ -13,7 +14,7 @@ function request_page(pn){
 	result_box.innerHTML = "Загрузка ...";
 	
 	var hr = new XMLHttpRequest();
-    hr.open("POST", "pagination_parser.php", true);
+    hr.open("POST", "php/main_parser.php", true);
     hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     hr.onreadystatechange = function() {
 	    if(hr.readyState == 4 && hr.status == 200) {
@@ -50,7 +51,7 @@ function request_page(pn){
     }
     
     var vars = "&pn="+pn+"&month="+month+"&show="+show;
-    alert (vars);
+    //alert (vars);
     hr.send(vars);
 	
 
@@ -67,24 +68,24 @@ function setCurrentMoth() {
 	month_box.selectedIndex = month;
 }
 
-function login(username, password) {
-	if (username == undefined) {
-		
-	}
+function login() {
+	
+	username = document.getElementById("username").value;
+	password = document.getElementById("password").value;
 
 	var hr = new XMLHttpRequest();
-	hr.open("POST", "login.php", true);
+	hr.open("POST", "php/login.php", true);
 	hr.setRequestHeader ("Content-type", "application/x-www-form-urlencoded");
+
 	hr.onreadystatechange = function() {
-		if (hr.readyState == 4 && hr.status == 200) {
-
-		}
+	    if(hr.readyState == 4 && hr.status == 200) {
+	    	alert(hr.responseText);
+	    }
 	}
-
-	var login_vars = 
+	
+	var login_vars = "username="+username+"&password="+password;
 	alert (login_vars);
-
-
+	hr.send(login_vars);
 }
 
 setCurrentMoth();
