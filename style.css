@@ -19,3 +19,32 @@ p {
 button {
 	padding: 3px 5px;
 }
+
+.controls {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+select {
+	margin-right: 20px;
+}
+
+table {
+
+}
+
+td, th {
+	padding: 8px;
+}
+
+th {
+	text-align: left;
+}
+
+
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+table tr:nth-child(odd) {
+    background-color: #fff;
+}
