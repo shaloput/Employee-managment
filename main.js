@@ -67,5 +67,25 @@ function setCurrentMoth() {
 	month_box.selectedIndex = month;
 }
 
+function login(username, password) {
+	if (username == undefined) {
+		
+	}
+
+	var hr = new XMLHttpRequest();
+	hr.open("POST", "login.php", true);
+	hr.setRequestHeader ("Content-type", "application/x-www-form-urlencoded");
+	hr.onreadystatechange = function() {
+		if (hr.readyState == 4 && hr.status == 200) {
+
+		}
+	}
+
+	var login_vars = 
+	alert (login_vars);
+
+
+}
+
 setCurrentMoth();
 request_page();

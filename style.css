@@ -6,10 +6,24 @@
 .container {
 	width: 960px;
 	margin: auto;
+	height: 100%;
 }
 
 .header {
-	margin: 20px auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background: #eee;
+	height: 50px;
+	position: relative;
+}
+
+h1 {
+	display: inline-block;
+}
+
+.login-block {
+	display: inline-block;
+	margin-left: 70px;
 }
 
 p {
@@ -21,16 +35,14 @@ button {
 }
 
 .controls {
-	margin-top: 10px;
-	margin-bottom: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	background: #fafafa;
 }
 
 select {
 	margin-right: 20px;
-}
-
-table {
-
 }
 
 td, th {
@@ -40,7 +52,6 @@ td, th {
 th {
 	text-align: left;
 }
-
 
 table tr:nth-child(even) {
     background-color: #eee;

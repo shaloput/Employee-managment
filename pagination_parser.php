@@ -1,7 +1,5 @@
 <?php
 	
-// Скрипт срабатывает только когда передан номер страницы.
-if(isset($_POST['pn'])) {
 	include_once ("connect.php");
 
 	$rpp = 10;
@@ -84,14 +82,12 @@ if(isset($_POST['pn'])) {
 	}
 	
 	// Закрываем соединение
-    mysqli_close($mysqli);
+	mysqli_close($mysqli);
 	// Отправляем данные обратно в ajax
 	//$json_10 = chop ($json_10, ",");
 	$json_10 .= '"control_data":{"lastpage_num":"'.$lastpage_num.'"}';
 	$json_10 .= '}';
     echo $json_10;
 
-	//exit();	
-}
 
 ?>

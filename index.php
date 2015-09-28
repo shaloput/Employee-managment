@@ -1,4 +1,6 @@
-<?php ?>
+<?php 
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +13,17 @@
 	<div class="header">
 		<div class="container">
 			<h1>Менеджер персонала</h1>
+			<div class="login-block">
+				
+					Логин:
+					<input id="username" type="text">
+					
+					Пароль:
+					<input id="password" type="password">
+					
+					<button id="login" onclick="javascript:login.php">Войти</button>		
+											
+			</div>
 		</div>			
 	</div>
 	<div class="container">
