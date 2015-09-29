@@ -70,8 +70,17 @@ td, th {
 	padding: 8px;
 }
 
-th {
+th.sort {
 	text-align: left;
+	cursor: pointer;
+}
+
+th.sort:hover {
+	background: #5b9bd5;
+}
+
+td:nth-child(3) {
+	text-align: right;
 }
 
 #overlay {
@@ -107,5 +116,15 @@ th {
 	top: 5px;
 }
 
+#pop-content {
+    position: relative;
+    width: 660px;
+    top: 40px;
+    left: 20px;
+}
+
+#fio-rus, #fio-eng {
+	width: 250px;
+}
 
 

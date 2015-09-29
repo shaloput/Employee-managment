@@ -69,16 +69,17 @@
 			$income = $hour_rate * $hours;
 		} else {
 			$income = $hour_rate*8*$days_m;
+			$hours = 0;
 		}
 
 
 		$income_tax = $income * 0.13;
 		$pensuranse = $income * 0.26;
-		$total_payout = $income - $income_tax - (!$is_contract)*$pensuranse;
+		$total_tax = $income_tax + (!$is_contract)*$pensuranse;
+		$total_payout = $income - $total_tax;
 
-		$json_10 .= '"emloyee'.$i.'":{ "fio_rus":"'.$fio_rus.'","fio_eng":"'.$fio_eng.'",
-		"is_contract":"'.$is_contract.'","income":"'.$income.'","income_tax":"'.$income_tax.'",
-		"pensuranse":"'.$pensuranse*(!$is_contract).'","total_payout":"'.$total_payout.'" },';
+
+		$json_10 .= '"employee'.$i.'":{ "json_id":"'.$i.'","fio_rus":"'.$fio_rus.'", "fio_eng":"'.$fio_eng.'",	"is_contract":"'.$is_contract.'", "income":"'.$income.'", "income_tax":"'.$income_tax.'", "pensuranse":"'.$pensuranse*(!$is_contract).'", "total_payout":"'.$total_payout.'", "total_tax":"'.$total_tax.'", "hours":"'.$hours.'" },';
 	}
 	
 	// Закрываем соединение

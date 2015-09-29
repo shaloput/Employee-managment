@@ -36,7 +36,7 @@ session_start();
 	<div class="container">
 		<div class="controls">
 			Выбор месяца: 
-			<select id="month_box" onchange="javascript:request_page();">
+			<select id="month_box" onchange="javascript:request_page(1);">
 				<option>Январь</option>
 				<option>Февраль</option>
 				<option>Март</option>
@@ -51,7 +51,7 @@ session_start();
 				<option>Декабрь</option>
 			<select>			
 			Показать:
-			<select id="show_box" onchange="javascript:request_page();">
+			<select id="show_box" onchange="javascript:request_page(1);">
 				<option selected>Всех</option>
 				<option>Постоянных сотрудников</option>
 				<option>Контрактников</option>
@@ -68,6 +68,20 @@ session_start();
 	<div id="overlay" onclick="javascript:close_pop();"></div>
 	<div id="popup">
 		<button id="close" onclick="javascript:close_pop();">X</button>
+		<div id="pop-content">
+			ФИО на русском: <input id="fio-rus" type="text"><br><br>
+			ФИО на английском: <input id="fio-eng" type="text"><br><br>
+			Тип: <select id="is-contract">
+					<option>Постоянный</option>
+					<option>Контрактник</option>
+				</select>
+			<span id="if_is_contr">Отработано часов: <input id="hours" type="text"></span><br><br>
+			Начислено: <input id="income" type="text"><br><br>
+			Подоходный налог: <input id="income-tax" type="text"><br><br>
+			<span id="if_is_emplo">Взносы страховые и пенсионные:<input id="pensuranse" type="text"><br><br></span>
+			Итого налогов и сборов: <input id="total-tax" type="text"><br><br>
+			Сумма к выплате: <input id="total-payout" type="text"><br><br>
+		</div>
 	</div>
 	
 </head>
