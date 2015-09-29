@@ -26,6 +26,12 @@ h1 {
 	margin-left: 70px;
 }
 
+#login-label {
+	position: absolute;
+	color: #f02f17;
+
+}
+
 p {
 	padding: 3px 0;
 }
@@ -45,6 +51,21 @@ select {
 	margin-right: 20px;
 }
 
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+table tr:nth-child(n+2) {
+	cursor: pointer;
+}
+
+table tr:nth-child(n+2):hover {
+	background: #deeaf6;
+}
+
 td, th {
 	padding: 8px;
 }
@@ -53,9 +74,38 @@ th {
 	text-align: left;
 }
 
-table tr:nth-child(even) {
-    background-color: #eee;
+#overlay {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100;
+    display: none;
 }
-table tr:nth-child(odd) {
-    background-color: #fff;
+
+#popup {
+	width: 700px;
+	height: 500px;
+	z-index: 1200;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+
+	margin-left: -350px;
+	margin-top: -250px;
+	background: #fff;
+	border:1px solid #eee;
+
+	display: none;
 }
+
+#close {
+	position: relative;
+	float: right;
+	right: 5px;
+	top: 5px;
+}
+
+
+

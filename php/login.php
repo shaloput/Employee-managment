@@ -4,6 +4,7 @@
 
 	
 	if (isset($_POST['username'])) {
+		
 		$username = $_POST['username'];
 		$password = md5($_POST['password']);
 		
@@ -15,9 +16,10 @@
 		if (mysqli_num_rows($res)) {
 			$_SESSION['logged'] = true;
 			$_SESSION['username'] = $username;		
-			echo "Вы вошли как ".$_SESSION['username']."&nbsp &nbsp<a href=\"#\" onclick=\"javascript:logout();\">Выйти</a>";
+			echo "1 | Вы вошли как ".$_SESSION['username']."&nbsp &nbsp<a href=\"#\" onclick=\"javascript:logout();\">Выйти</a>";
 		} else {
 			$_SESSION['logged'] = false;
+			echo "0 | Неверный логин или пароль";
 		}
 
 	mysqli_close($mysqli);

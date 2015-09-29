@@ -22,8 +22,8 @@ session_start();
 					
 					Пароль:
 					<input id=\"password\" type=\"password\">
-					
-					<button onclick=\"javascript:login();\">Войти</button>";
+					<button onclick=\"javascript:login();\">Войти</button>
+					<p id=\"login-label\"></p>";
 				} else {
 					echo "Вы вошли как ".$_SESSION['username']."&nbsp &nbsp<a href=\"#\" onclick=\"javascript:logout();\">Выйти</a>";
 				}
@@ -64,7 +64,11 @@ session_start();
 		</div>	
 	
 	</div>
-
+	
+	<div id="overlay" onclick="javascript:close_pop();"></div>
+	<div id="popup">
+		<button id="close" onclick="javascript:close_pop();">X</button>
+	</div>
 	
 </head>
 	
